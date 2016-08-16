@@ -1,0 +1,9 @@
+THE BYTECODE
+- The key that allows Java to solve both the security and the portability problems just described
+is that the output of a Java compiler is not executable code. Rather, it is bytecode. Bytecode is
+a highly optimized set of instructions designed to be executed by the Java run-time system,
+which is called the Java Virtual Machine (JVM). In essence, the original JVM was designed as
+an interpreter for bytecode.
+
+-Java also supports Remote Method Invocation (RMI). This feature enables a program to
+invoke methods across a network.

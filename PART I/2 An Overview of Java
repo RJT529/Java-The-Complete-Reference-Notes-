@@ -1,0 +1,24 @@
+OOP
+
+-Object-oriented programming organizes a program around its data (that is,
+objects) and a set of well-defined interfaces to that data.
+[a data controlling access to code.]
+
+Abstraction: emphasising on essential things
+
+THREE OOP PRINIPLE:
+
+1. Encapsulation:
+-Encapsulation is the mechanism that binds together code and the data it manipulates, and
+keeps both safe from outside interference and misuse.
+-objects are sometimes referred to as instances of a class
+-The data defined by the class are referred to as member variables or instance variables. 
+-The code that operates on that data is referred to as member methods or just methods.
+
+2. Inheritance:
+-Inheritance is the process by which one object acquires the properties of another object.
+-supports the concept of hierarchical classification
+
+3. Polymorphism:
+-allows one interface to be used for a general class of actions.
+-one interface, multiple methods
