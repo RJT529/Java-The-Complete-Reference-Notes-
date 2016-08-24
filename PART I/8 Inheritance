@@ -1,0 +1,93 @@
+											INHERITANCE
+_________________________________________________________________________________________________________________
+
+	- a class that is inherited is called a superclass. 
+	- The class that does the inheriting is called a subclass.
+	- keyword extends is used to create a subclass
+	- Java does not support the inheritance of multiple superclasses into a single subclass
+	- no class can be a superclass of itself.
+	- a subclass cannot acces private members of the superclass.
+	- A reference variable of a superclass can be assigned a reference to any subclass derived from that 
+	  superclass.
+	- it is the type of the reference variable—not the type of the object that it refers to—that determines what 
+	  members can be accessed.
+_________________________________________________________________________________________________________________
+
+USING super
+
+	- Using super to Call Superclass Constructors:
+		When a subclass calls super( ), it is calling the constructor of its immediate superclass. Thus, super( )
+		always refers to the superclass	immediately above the calling class. This is true even in a multileveled 
+		hierarchy. Also, super( ) must always be the first statement executed inside a subclass constructor.
+		>Synatx:
+			super(arg-list);
+
+	- A Second Use for super:
+		This second form of super is most applicable to situations in which member names of a subclass hide 
+		members by the same name in the superclass.
+		Syntax:
+			super.member
+_________________________________________________________________________________________________________________
+
+MULTILEVEL HIERARCHY
+	
+	- given three classes called A, B, and C, C can be a subclass of B, which
+	  is a subclass of A.
+	- in a class hierarchy, constructors complete their execution in order of derivation, from superclass to
+      subclass.
+_________________________________________________________________________________________________________________
+
+METHOD OVERRIDING
+
+	- In a class hierarchy, when a method in a subclass has the same name and type signature as a method in its 
+	superclass, then the method in the subclass is said to override the method in the superclass.
+	- Methods with differing type signatures are overloaded – not overridden.
+_________________________________________________________________________________________________________________
+
+DYNAMIC METHOD DISPATCH
+
+	- Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, 
+	rather than compile time.
+	- Java implements run-time polymorphism through it.
+	- it is the type of the object being referred to that determines which version of an overridden method will 
+	be executed.
+
+	NOTE: Readers familiar with C++ or C# will recognize that overridden methods in Java are similar to virtual 
+	functions in those languages
+
+_________________________________________________________________________________________________________________
+
+USING ABSTRACT CLASSES
+
+	- You can require that certain methods be overridden by subclasses by specifying the abstract type modifier 
+	  these methods referred to as subclasser responsibility because they have no implementation specified in the 
+	  superclass.
+	- Any class that contains one or more abstract methods must also be declared abstract.
+	- an abstract class cannot be directly instantiated with the new operator.
+	- you cannot declare abstract constructors, or abstract static methods.
+	- Any subclass of an abstract class must either implement all of the abstract methods in the superclass, or 
+	  be declared abstract itself.
+	- Abstract classes can include as much implementation as they see fit.
+	- Although abstract classes cannot be used to instantiate objects, they can be used to create object 
+	  references.
+_________________________________________________________________________________________________________________
+
+USING final WITH INHERITENCE
+
+	-  Using final to Prevent Overriding :
+			> Methods declared as final cannot be overridden.
+			> Methods declared as final can sometimes provide a performance enhancement: The compiler is free to 
+			inline calls to them because it “knows” they will not be overridden by a subclass.
+			> early binding and late binding
+
+	- Using final to Prevent Inheritance:
+			>Declaring a class as final implicitly declares all of its methods as final, too.
+_________________________________________________________________________________________________________________
+
+THE Object CLASS
+
+	- All other classes are subclasses of Object
+_________________________________________________________________________________________________________________
+
+
+________________________________________________ THE END ________________________________________________________
