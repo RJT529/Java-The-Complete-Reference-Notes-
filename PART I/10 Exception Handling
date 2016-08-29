@@ -1,0 +1,134 @@
+_________________________________________________________________________________________________________________
+
+EXCEPTION HANDLING FUNDAMENTALS
+
+	> Java exception handling is managed via five keywords: 
+			try, catch, throw, throws, and finally.
+
+	> Program statements that you want to monitor for exceptions are contained within a try block. 
+	> If an exception occurs within the try block, it is thrown. 
+	> Your code can catch this exception (using catch) and handle it in some rational manner. System-generated 	
+	  exceptions are automatically thrown by the Java run- time system.
+	> To manually throw an exception, use the keyword throw. 
+	> Any exception that is thrown out of a method must be  specified as such by a throws clause. 
+	> Any code that absolutely must be executed after a try block completes is put in a finally block.
+	
+_________________________________________________________________________________________________________________
+
+EXCEPTION TYPES
+
+				Throwable
+				/		\
+			Exception 	Error
+				|
+			RuntimeException
+_________________________________________________________________________________________________________________
+
+UNCAUGHT EXCEPTIONS
+	
+	> once an exception has been thrown, it must be caught by an exception handler and dealt with immediately.
+	> Any exception that is not caught by your program will ultimately be processed by the default handler.
+	> The default handler displays a string describing the exception, prints a stack trace from the point at 
+	  which the exception occurred, and terminates the program.
+_________________________________________________________________________________________________________________
+
+USING try AND catch
+	
+	> Once the catch statement has executed, program control continues with the next line in the program following
+	 the entire try / catch mechanism.
+	> You cannot use try on a single statement.
+_________________________________________________________________________________________________________________
+
+DISPLAYING A DESCRIPTION OF AN EXCEPTION
+
+	> Throwable overrides the toString( ) method (defined by Object) so that it returns a string containing a 
+	  description of the exception.
+_________________________________________________________________________________________________________________
+
+MULTIPLE catch
+
+	> A subclass must come before its superclass in a series of catch statements. If not, unreachable code will 
+	  be created and a compile-time error will result.
+_________________________________________________________________________________________________________________
+
+NESTED try STATEMENTS
+
+	> Implemented using stack.
+	> Nesting of try statements can occur in less obvious ways when method calls are involved.
+_________________________________________________________________________________________________________________
+
+throw 
+
+	> general form:
+		throw ThrowableInstance;
+	> ThrowableInstance must be an object of type Throwable or a subclass of Throwable. 
+	> Primitive types and non-Throwable classes cannot be used a exception.
+	> two ways you can obtain a Throwable object: 
+		- using a parameter in a catch clause  
+		- creating one with the new operator.
+			Ex:
+				throw new NullPointerException("demo");
+			Many of Java’s built-in run-time exceptions have at least two constructors: one with no parameter 
+			and one that takes a string parameter. When the second form is used, the argument specifies a string
+			that describes the exception.
+			String can be displayed by: print() or println() or getMessage()
+
+_________________________________________________________________________________________________________________
+
+throws
+	
+	> A throws clause lists the types of exceptions that a method might throw.
+	> This is necessary for all exceptions, except those of type Error or RuntimeException, or any of their 
+	  subclasses.
+	> General Form:
+		type method-name(parameter-list) throws exception-list
+		{
+		// body of method
+		}
+
+_________________________________________________________________________________________________________________
+
+finally
+
+	> finally creates a block of code that will be executed after a try /catch block has completed and before the
+	  code following the try/catch block. 
+	> The finally block will execute whether or not an exception is thrown.
+	> each try statement requires at least one catch or a finally clause.
+_________________________________________________________________________________________________________________
+
+JAVA's BUILT IN EXCEPTIONS
+
+	> java.lang defines several classes.
+	> RuntimeException are unchecked exceptions as compiler does not check to see if a method handles or throws 
+	  these exceptions
+_________________________________________________________________________________________________________________
+
+CREATING OWN EXCEPTION SUBCLASSES
+	
+	> just define a subclass of Exception.
+	> Exception defines four public constructors:
+		Exception( )
+		Exception(String msg)
+	> override toString( ) defined by Throwable
+_________________________________________________________________________________________________________________
+
+CHAINED EXCEPTION
+
+	> The chained exception feature allows you to associate another exception with an exception. This second 
+	  exception describes the cause of the first exception.
+	> To allow chained exceptions, two constructors and two methods were added to Throwable. 
+	> The constructors are shown here:
+		Throwable(Throwable causeExc)
+		Throwable(String msg, Throwable causeExc)
+	> The methods are:
+		Throwable getCause( )
+		Throwable initCause(Throwable causeExc)
+_________________________________________________________________________________________________________________
+
+THREE RECENTLY ADDED EXCEPTION FEATURES:
+
+	1. try-with-resources
+	2. multi-catch
+	3. final rethrow or more precise rethrow
+	
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
