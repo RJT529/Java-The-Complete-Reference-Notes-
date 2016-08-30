@@ -1,0 +1,76 @@
+MULTITHREADED PROGRAMMING INTRO
+
+	> two distinct types of multitasking:
+			- process-based : 
+				a program is the smallest unit of code that can be dispatched by the scheduler.
+				allows your computer to run two or more programs concurrently.
+			- thread-based :
+				the thread is the smallest unit of dispatchable code.
+				allows a single program to perform two or more tasks simultaneously.
+_________________________________________________________________________________________________________________
+
+THE JAVA THREAD MODEL
+
+	> Single-threaded systems use an approach called an event loop with polling.
+
+	> Multi-threaded systems
+		- In a single-core system, two or more threads do not actually run at the same time, but idle CPU time is
+		  utilized.
+		- In multi-core systems, it is possible for two or more threads to actually execute simultaneously.
+
+	> States of Thread:
+		- running
+		- ready to run
+		- suspended
+		- resumed
+		- blocked
+		- terminated
+
+	# THREAD PRIORITIES:
+		> Context switch:Thread Priority is used to decide when to switch from one running thread to the next.
+				- A thread can voluntarily relinquish control.
+				- A thread can be preempted by a higher-priority thread.
+
+	# SYNCHRONIZATION:
+		> interprocess synchronization: the monitor
+			- each object has its own implicit monitor that is automatically entered when one of the object’s
+			  synchronized methods is called. Once a thread is inside a synchronized method, no other thread can call
+			  any other synchronized method on the same object.
+
+	# MESSAGING
+		> Java’s messaging system allows a thread to enter a synchronized method on an object, and then wait there 
+		  until some other thread explicitly notifies it to come out.
+
+	# THE Thread CLASS AND THE Runnable INTERFACE
+		>To create a new thread, your program will either extend Thread or implement the Runnable interface.
+		> Methods:
+			- getName
+			- getPriority
+			- isAlive
+			- join
+			- run 
+			- sleep
+			- start
+
+_________________________________________________________________________________________________________________
+
+THE Main THREAD
+	
+	> When a Java program starts up, main thread begins running immediately.
+		• It is the thread from which other “child” threads will be spawned.
+		• Often, it must be the last thread to finish execution because it performs various shutdown actions.
+
+
+_________________________________________________________________________________________________________________
+
+
+
+_________________________________________________________________________________________________________________
+
+
+
+_________________________________________________________________________________________________________________
+
+
+
+_________________________________________________________________________________________________________________
