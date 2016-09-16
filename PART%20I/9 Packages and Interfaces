@@ -1,0 +1,124 @@
+_________________________________________________________________________________________________________________
+
+												PACKAGES
+_________________________________________________________________________________________________________________
+
+BASICS:
+	
+	- The package is both a naming and a visibility control mechanism.
+
+	- Defining a Packages: 
+		> simply include a package command as the first statement in a Java source file.
+			 Example:
+				package pkg;
+		> You can create a hierarchy of packages. simply separate each package name from the one above it by use 
+		of a period.
+			 Example:
+			package java.awt.image;
+
+	- Finding Packages and CLASSPATH:
+		> First, by default, the Java run-time system uses the current workinng directory as its starting point.
+		  Thus, if your package is in a subdirectory of the current directory, it will be found. 
+		> Second, you can specify a directory path or paths by setting the
+          CLASSPATH environmental variable. 
+		> Third, you can use the -classpath option with java
+		  and javac to specify the path to your classes.
+_________________________________________________________________________________________________________________
+
+ACCESS PROTECTION:
+
+										Private 	No Modifier 	Protected 		Public
+
+	Same class 							Yes 		Yes 			Yes 			Yes
+	Same package subclass 				No 			Yes 			Yes 			Yes
+	Same package non-subclass 			No 			Yes 			Yes 			Yes
+	Different package subclass 			No 			No 				Yes 			Yes
+	Different package non-subclass 		No 			No 				No 				Yes
+
+	> When a class is public, it must be the only public class declared in the file, and the file must have the 
+	  same name as the class.
+_________________________________________________________________________________________________________________
+
+IMPORTING PACKAGES
+	
+	> The import statement will bring certain classes, or entire packages, into visibility.
+	> The general form of the import statement:
+			import pkg1 [.pkg2].(classname | *);
+
+	> All of the standard Java classes included with Java are stored in a package called java.
+	> java.lang is implicitly imported by the compiler
+			import java.lang.*;
+	> The import statement is optional. Any place you use a class name, you can use its fully qualified name, 
+	  which includes its full package hierarchy.
+	  	Ex:
+	  		class MyDate extends java.util.Date {
+	  		}
+
+_________________________________________________________________________________________________________________
+
+												INTERFACES
+_________________________________________________________________________________________________________________
+
+INTRODUCTION
+
+	> using interface, you can specify what a class must do, but not how it does it.
+	> they lack instance variables and method body
+	> any number of classes can implement an interface. 
+	> one class can implement any number of interfaces.
+	> Each class that includes such an interface must implement all of the methods.
+	> It is not possible to create an instance of an interface by itself.
+_________________________________________________________________________________________________________________
+
+IMPLEMENTATION OF INTERFACE
+
+	> General Form:
+
+		class classname [extends superclass] [implements interface [,interface...]] {
+		// class-body
+		}
+
+	> The methods that implement an interface must be declared public
+
+
+_________________________________________________________________________________________________________________
+
+ACCESSING IMPLEMENTATION THROUGH INTERFACE REFERENCES
+
+	> You can declare variables as object references that use an interface rather than a class type.
+	> An interface reference variable has knowledge only of the methods declared by its interface declaration.
+
+_________________________________________________________________________________________________________________
+
+PARTIAL IMPLEMENTATION
+
+	> If a class includes an interface but does not fully implement the methods required by that interface, then 
+	that class must be declared as abstract.
+	>Any class that inherits Incomplete must implement callback( ) or be declared abstract itself.
+_________________________________________________________________________________________________________________
+
+NESTED INTERFACES
+	
+	> An interface which is declared a member of a class or another interface. 
+	> A nested interface can be declared as public, private, or protected. This differs from a top-level interface,
+	  which must either be declared as public or use the default access level, as previously described.
+	> When a nested interface is used outside of its enclosing scope, it must be qualified by the name of the class
+	  or interface of which it is a member
+_________________________________________________________________________________________________________________
+
+VARIABLES IN INTERFACES
+
+	> interfaces to import shared constants into multiple classes by simply declaring an interface that contains variables that are initialized to the desired values.
+_________________________________________________________________________________________________________________
+
+INTERFACES CAN BE EXTENDED
+
+	> One interface can inherit another by use of the keyword extends
+_________________________________________________________________________________________________________________
+
+DEFAULT INTERFACE METHODS
+
+	> A default method lets you define a default implementation for an interface method.
+	> Declaration of an interface default method is preceded by the keyword default.
+
+	
+_________________________________________________________________________________________________________________
