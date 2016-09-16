@@ -77,7 +77,8 @@ INTRODUCING final
 	- A field can be declared as final. Doing so prevents its contents from being modified, making it, 
 	essentially, a constant. This means that you must initialize a final field when it is declared.
 	- In addition to fields, both method parameters and local variables can be declared final
-	- final can also be applied to methods
+	- final can also be applied to methods. If you make any method as final, you cannot override it.
+	-If you make any class as final, you cannot extend it.
 
 _________________________________________________________________________________________________________________
 
